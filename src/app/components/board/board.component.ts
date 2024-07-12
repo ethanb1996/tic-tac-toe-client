@@ -55,4 +55,10 @@ export class BoardComponent implements OnInit {
     // }).unsubscribe(); // To avoid memory leaks
   }
   
+  resetGame(): void {
+    this.gameService.resetGame().subscribe(gameState => {
+      this.gameState = gameState;
+      this.gameStore.resetPlayer();
+    });
+  }
 }
