@@ -6,7 +6,7 @@
         [value]="cell"
         [row]="rowIndex"
         [col]="colIndex"
-        ></app-cell>
+        (cellClick)="makeMove($event.row, $event.col)"></app-cell>
     </div>
 </div>
 
