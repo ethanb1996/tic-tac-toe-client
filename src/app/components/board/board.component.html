@@ -2,7 +2,11 @@
 
 <div id="board">
     <div *ngFor="let row of gameState; let rowIndex = index">
-        <app-cell *ngFor="let cell of row; let colIndex = index"></app-cell>
+        <app-cell *ngFor="let cell of row; let colIndex = index"
+        [value]="cell"
+        [row]="rowIndex"
+        [col]="colIndex"
+        ></app-cell>
     </div>
 </div>
 
