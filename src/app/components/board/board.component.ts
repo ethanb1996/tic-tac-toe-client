@@ -29,6 +29,7 @@ export class BoardComponent implements OnInit {
       if (data.winner) {
         alert(`${data.winner} wins!`);
       }
+      this.gameStore.togglePlayer()
       this.subscription.unsubscribe();
     });
     this.initGame();
@@ -43,16 +44,8 @@ export class BoardComponent implements OnInit {
 
   makeMove(row: number, col: number): void {
     this.subscription = this.gameStore.currentPlayer$.pipe(
-      switchMap(player=>  this.gameService.makeMove(row,col,player)),
-      tap(_ => this.gameStore.togglePlayer())
+      switchMap(player=>  this.gameService.makeMove(row,col,player))
     ).subscribe()
-    // this.gameStore.currentPlayer$.subscribe(player => {
-    //   this.gameService.makeMove(row, col, player).subscribe(response => {
-    //     this.gameStore.togglePlayer();
-    //   }, error => {
-    //     console.error('Invalid move');
-    //   });
-    // }).unsubscribe(); // To avoid memory leaks
   }
   
   resetGame(): void {
