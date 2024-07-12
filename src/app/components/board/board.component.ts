@@ -44,7 +44,7 @@ export class BoardComponent implements OnInit {
 
   makeMove(row: number, col: number): void {
     this.subscription = this.gameStore.currentPlayer$.pipe(
-      switchMap(player=>  this.gameService.makeMove(row,col,player))
+      switchMap(player=>  this.gameService.makeMove(row, col,player))
     ).subscribe()
   }
   

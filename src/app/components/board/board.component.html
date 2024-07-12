@@ -1,13 +1,10 @@
-<p>board works!</p>
-
 <div id="board">
-    <div *ngFor="let row of gameState; let rowIndex = index">
-        <app-cell *ngFor="let cell of row; let colIndex = index"
+    <div class="row" *ngFor="let row of gameState; let rowIndex = index">
+      <app-cell *ngFor="let cell of row; let colIndex = index"
         [value]="cell"
         [row]="rowIndex"
         [col]="colIndex"
         (cellClick)="makeMove($event.row, $event.col)"></app-cell>
     </div>
-</div>
-
-<button (click)="resetGame()">Reset Game</button>
+  </div>
+  <button (click)="resetGame()">Reset Game</button>

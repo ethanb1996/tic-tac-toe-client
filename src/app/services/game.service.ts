@@ -15,7 +15,7 @@ export class GameService {
   }
 
   makeMove(row: number, col: number, player: string): Observable<{ gameState: string[][], winner: string | null }> {
-    return this.http.post<{ gameState: string[][], winner: string | null }>(`${this.baseUrl}/move`, { row, col, player });
+    return this.http.post<{ gameState: string[][], winner: string | null }>(`${this.baseUrl}/move`, { col,row , player });
   }
 
   resetGame(): Observable<string[][]> {
