@@ -15,17 +15,7 @@
     box-sizing: border-box;
   }
   
-  .cell {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #000;
-    font-size: 2em;
-    cursor: pointer;
-    width: 100px;
-    height: 100px;
-    box-sizing: border-box;
-  }
+  
   
   button {
     display: block;

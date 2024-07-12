@@ -15,7 +15,7 @@ export class BoardComponent implements OnInit {
 
   gameState: string[][] = [];
 
-  constructor(private gameService: GameService, private gameStore: GameStoreService) { }
+  constructor(private gameService: GameService, public gameStore: GameStoreService) { }
 
   ngOnInit(): void {    
     this.socket = io('http://localhost:3000');

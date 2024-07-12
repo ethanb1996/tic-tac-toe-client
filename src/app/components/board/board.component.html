@@ -1,4 +1,5 @@
 <div id="board">
+    <h3 class="center-text">{{gameStore.currentPlayer$ | async}} - Your turn </h3>
     <div class="row" *ngFor="let row of gameState; let rowIndex = index">
       <app-cell *ngFor="let cell of row; let colIndex = index"
         [value]="cell"
@@ -6,5 +7,5 @@
         [col]="colIndex"
         (cellClick)="makeMove($event.row, $event.col)"></app-cell>
     </div>
-  </div>
-  <button (click)="resetGame()">Reset Game</button>
+</div>
+<button (click)="resetGame()">Reset Game</button>
