@@ -1,1 +1,8 @@
 <p>board works!</p>
+
+<div id="board">
+    <div *ngFor="let row of gameState; let rowIndex = index">
+        <app-cell *ngFor="let cell of row; let colIndex = index"></app-cell>
+    </div>
+</div>
+

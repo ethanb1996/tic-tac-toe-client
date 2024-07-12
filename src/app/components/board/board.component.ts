@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./board.component.scss']
 })
 export class BoardComponent implements OnInit {
+  gameState: string[][] = [
+    ['', '', ''],
+    ['', '', ''],
+    ['', '', '']
+  ];
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
   }
 
+  
 }
